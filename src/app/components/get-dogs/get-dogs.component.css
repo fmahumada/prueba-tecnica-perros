@@ -1,0 +1,19 @@
+.main-box{
+  max-width: 70%;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+.btn-blue{
+  color: blue;
+}
+.btn-red{
+  color: #ff0000;
+}
+.actions-box{
+  text-align: center;
+}
+@media only screen and (max-width: 720px){
+  .main-box{
+    max-width: 90%;
+  }
+}

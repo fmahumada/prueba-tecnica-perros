@@ -1,0 +1,26 @@
+<form #newdogForm="ngForm" (ngSubmit)="onSubmit()">
+  <h1>Agregar Perros</h1>
+  <div class="form-group">
+    <label for="breed_name" >Raza escogida:</label>
+    <select class="form-control" name="breeds" [(ngModel)]="dog.breed" #breed="ngModel" required>
+      <option value="default" selected>Seleccione raza</option>
+      <option [value]="breeds" *ngFor="let breeds of dogs_breeds.message">{{breeds}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label >Nombre del Perro:</label>
+    <input type="text" class="form-control" #dogname="ngModel" [(ngModel)]="dog.dog_name" name="name_dog" required>
+    <span *ngIf="!dogname.valid && dogname.touched">
+      *El nombre es obligatorio.
+    </span>
+  </div>
+  <div class="form-group">
+    <label>Fecha de nacimiento del Perro:</label>
+    <input type="date" class="form-control" #dogdob="ngModel" [(ngModel)]="dog.dog_dob" name="dob_dog" required />
+    <span *ngIf="!dogname.valid && dogname.touched">
+      *La fecha de nacimiento es obligatoria.
+    </span>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!newdogForm.form.valid">INSCRIBIR PERRO</button>
+</form>
